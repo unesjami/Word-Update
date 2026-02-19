@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="https://i.ibb.co/GQX4pNkL/logo1.png">
+   <link rel="icon" type="image/png" href="https://i.ibb.co/GQX4pNkL/logo1.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Word Update · edit fixes translation</title>
+  <title>Word Update · mastery fraction</title>
   <!-- Vazirmatn for Persian -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+  <!-- favicon placeholder (replace with your own) -->
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA3hJREFUWEftl0uIVXUUx3/nzsxM88ZGKLFMYyFDixqW9rAQLVpEi4iWLYK2UVEUBEEQBVEQBEG0qGgRFLSJNlG0GqFoYZSZ5XvUzJzX3O7/nHvvzJ2Z7nXGoOCCP/fxP+f7/73eUa1W1a9/3x9X/78O/A9HwAL+/vev1Gg0VKlU1NPTk8y1Wq2kXC6rVqtpYmJC1WpV1WpVU1NTSZ+ZmVEul1Mul1Mul1O1Wk3qSqWigYEB7dq1S7t379bOnTu1fft2jY6OamJiQoVCIZnr6+vT+vXr9fDDD+uxxx7Tgw8+qPXr12vz5s2q1WoaGBhIoIeHh/X444/rjTfe0ObNmzU0NKRKpaJ8Pq+pqSlt2bJFzz77rHbt2qXt27dramoqOetgO59wPgJ8rVKpqFwuJ8d7eXnfffdpx44deuKJJ7Rr1y4NDw8rl8sln89ms3r//ff1ySefaPv27dq8ebMKhUJS29uvv/6q3bt368knn9RLL72kO+64I2FhcHBQ7777rj7//HNt2LBBmUwmOYfAw8PD2rJli7744gsNDQ1pamrqjHMJzECAw2NjYzp69KgOHDiggwcP6uDBgzpy5IiOHDmio0eP6ujRozp27Jh++eUX/fLLL/r555/122+/6cSJEzp58qR+/fVXnTp1SsePH9fJkyf1zz//6Pfff9fJkyc1Pj6uw4cP6/jx4xodHdU333yjTz/9VB9//LE++ugjbd68WUNDQ+ru7lZPT0+SwszMjLZs2aL3339fW7du1dq1a9XT06Oenh6tXbtWmzZt0o4dO3Trrbert7c3JYzvP6smxHdnZ6cymYxKpZKmpqbO6MvPmDFTSqVS6u7uVmdnZzqfTqeT8/P5fDqfSqWS+XK5nMwXi0VNT08nnx0dHUm2u7v7z9h2KpX6j2xnMpmk5vP5ZG5ubi6pne1KpaJcLqd8Pp98FovFpHa2K5WK8vm88vm8isVikv348eMqFovJ3NzcXDKfzWb/l+1SqZTUdrZzuZxyuVxS2/tu9/1/2bZ7P5/PJ3N2bW1+bm4uqe29t7W1/Z9sNxoNVSoVFYvFpLb33u77/7Jt99/W1nZGbefa2tqS2u7d/n2z2Uz+LpVK6m+27d5tNptJbff9f7IzMzOTnJ+dnVWz2Uxqu++bzeY52c5ms+fc+1/bnp6eTmp7321tbf/JdjabPWfevu/f/5ftfD6vcrms2dnZ/2Q7m80mn7a27b5vNBrJ/V/btn/PZDJJbff9f7JdKpWS2u77vwHwP6XwH47AfzgC/wEujpAVu8V3WAAAAABJRU5ErkJggg==">
   <style>
-    /* full 16:9 minimal dark canvas */
     * {
       margin: 0;
       padding: 0;
@@ -23,7 +24,6 @@
       color: #d9e6f5;
     }
 
-    /* main full-screen container — 16:9 friendly, no frames */
     .app {
       width: 100%;
       height: 100%;
@@ -77,16 +77,51 @@
       flex: 1;
     }
 
+    @keyframes smartFlow {
+      0% { 
+        opacity: 0.6; 
+        transform: translateX(-8px) translateY(0); 
+        border-left: 2px solid #4aa0ff; 
+        box-shadow: 0 0 5px rgba(74, 160, 255, 0.2);
+      }
+      30% { 
+        opacity: 1; 
+        transform: translateX(3px) translateY(-2px); 
+        border-left: 2px solid #7fb9ff; 
+        box-shadow: 0 0 15px rgba(127, 185, 255, 0.4);
+      }
+      60% { 
+        transform: translateX(-2px) translateY(2px); 
+        border-left: 2px solid #4aa0ff; 
+        box-shadow: 0 0 8px rgba(74, 160, 255, 0.3);
+      }
+      100% { 
+        opacity: 1; 
+        transform: translateX(0) translateY(0); 
+        border-left: 2px solid transparent; 
+        box-shadow: none;
+      }
+    }
+
     .word-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.5rem 0.2rem 0.5rem 0.8rem;
+      padding: 0.7rem 0.2rem 0.7rem 0.8rem;
       margin: 0.2rem 0;
       border-bottom: 1px solid #1c2b3a;
+      transition: all 0.2s ease;
+      animation: smartFlow 1.6s ease-out forwards;
     }
 
     .word-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      flex: 1;
+    }
+
+    .word-pair {
       display: flex;
       align-items: baseline;
       gap: 0.8rem;
@@ -111,6 +146,29 @@
       direction: rtl;
       font-family: 'Vazirmatn', sans-serif;
       color: #b6d0ec;
+    }
+
+    .ai-sentence {
+      font-size: 0.7rem;
+      color: #9bb9de;
+      margin-left: 2.6rem;
+      margin-top: 0.1rem;
+      font-style: normal;
+      letter-spacing: 0.1px;
+      max-width: 95%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-left: 1px solid #2f4d70;
+      padding-left: 0.5rem;
+      background: linear-gradient(90deg, #132433 0%, transparent 100%);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .right-group {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
     }
 
     .icon-group {
@@ -141,6 +199,62 @@
     }
     .delete-btn:hover {
       color: #ffa7b9;
+    }
+
+    /* mastery circle - shows fraction and fills progressively */
+    .mastery-circle {
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #1e3245;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #d0e2ff;
+      box-shadow: 0 0 10px #1f3f5e;
+      transition: all 0.3s ease;
+      z-index: 100;
+      border: 2px solid #3d6380;
+    }
+
+    .mastery-circle.filled {
+      border-color: #7ae9a7;
+      color: white;
+      box-shadow: 0 0 20px #55dd88;
+    }
+
+    /* fill overlay using conic gradient */
+    .mastery-circle .fill-overlay {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: conic-gradient(#55dd88 0deg 0deg, transparent 0deg 360deg);
+      mask: radial-gradient(circle at center, transparent 55%, black 56%);
+      -webkit-mask: radial-gradient(circle at center, transparent 55%, black 56%);
+      transition: background 0.3s ease;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .mastery-circle span {
+      position: relative;
+      z-index: 2;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .mastery-circle .fraction {
+      font-size: 0.7rem;
+      opacity: 0.9;
     }
 
     .empty-message {
@@ -182,9 +296,10 @@
     }
 
     #wordInput::placeholder {
-      color: #4b6a8a;
+      color: #5f7da2;
       font-weight: 300;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+      opacity: 1;
     }
 
     .lang-mini {
@@ -258,7 +373,11 @@
       color: white;
     }
 
-    /* hide all extra sentences */
+    /* hide extra text */
+    .top-signature span, .edit-sync {
+      display: none;
+    }
+
     footer, .list-header, .enter-hint, .def-hint, .ai-badge {
       display: none;
     }
@@ -266,7 +385,14 @@
 </head>
 <body>
 <div class="app">
-  <div class="top-signature">Word Update · edit syncs translation</div>
+  <div class="top-signature">Word Update · mastery</div>
+
+  <!-- Dynamic fraction circle -->
+  <div class="mastery-circle" id="masteryCircle">
+    <div class="fill-overlay" id="circleFill"></div>
+    <span id="circleFraction">0/0</span>
+    <span class="fraction">kept</span>
+  </div>
 
   <div class="word-stage">
     <div class="page active-page" id="mainPage">
@@ -286,7 +412,7 @@
 
   <div class="input-panel-bottom">
     <div class="small-input">
-      <input type="text" id="wordInput" placeholder="word (en/fa)" autofocus>
+      <input type="text" id="wordInput" placeholder="Add word here" autofocus>
       <div class="lang-mini" id="langDisplay">
         <span id="detectedLang">EN</span>
         <span>→</span>
@@ -303,7 +429,7 @@
 <script>
   (function() {
     let wordPairs = [];
-    const STORAGE_KEY = 'word_update_fix_v2';
+    const STORAGE_KEY = 'word_update_fraction_v2';
 
     const inputEl = document.getElementById('wordInput');
     const mainList = document.getElementById('listInner');
@@ -312,13 +438,15 @@
     const targetLangSpan = document.getElementById('targetLang');
     const loadingIndicator = document.getElementById('loadingIndicator');
     const errorMessage = document.getElementById('errorMessage');
+    const masteryCircle = document.getElementById('masteryCircle');
+    const circleFill = document.getElementById('circleFill');
+    const circleFraction = document.getElementById('circleFraction');
 
     const mainPageBtn = document.getElementById('showMainPage');
     const keptPageBtn = document.getElementById('showKeptPage');
     const mainPage = document.getElementById('mainPage');
     const keptPage = document.getElementById('keptPage');
 
-    // load or seed
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
@@ -331,7 +459,103 @@
       }
     } catch (e) { wordPairs = []; }
 
-    wordPairs = wordPairs.map(w => ({ ...w, kept: w.kept === true }));
+    function smartAISentence(word) {
+      if (!word) return 'example sentence missing.';
+      const w = word.toLowerCase().trim();
+      
+      const contextMap = {
+        'clarity': 'The clarity of her explanation made everything understandable.',
+        'presence': 'His presence alone brought a sense of calm to the room.',
+        'example': 'This is a perfect example of how context works.',
+        'translation': 'A good translation captures both meaning and tone.',
+        'hello': 'Hello is the most common greeting in English.',
+        'world': 'The world is full of fascinating places to explore.',
+        'peace': 'Peace begins with a smile, she said.',
+        'light': 'Light travels faster than sound, which is why we see lightning first.',
+        'dark': 'The dark forest seemed mysterious and ancient.',
+        'strong': 'Strong winds knocked down several trees.',
+        'quick': 'The quick brown fox jumps over the lazy dog.',
+        'happy': 'Happy people often spread joy to others.',
+        'sad': 'The sad movie made everyone cry.',
+        'big': 'A big responsibility comes with great power.',
+        'small': 'Small details can make a big difference.',
+        'good': 'Good habits lead to a successful life.',
+        'bad': 'Bad weather forced the event to cancel.',
+        'new': 'A new beginning brings hope and excitement.',
+        'old': 'The old house had many stories to tell.',
+        'day': 'Each new day is a chance to improve.',
+        'night': 'The night sky was filled with stars.',
+        'love': 'Love is patient, love is kind.',
+        'hate': 'Hate only leads to more suffering.',
+        'life': 'Life is what happens when you are busy making plans.',
+        'time': 'Time waits for no one.',
+        'person': 'She is the kindest person I have ever met.',
+        'place': 'This place feels like home.',
+        'thing': 'The most important thing is to stay curious.',
+        'way': 'There is always a way forward.',
+        'look': 'Look before you leap, they say.',
+        'make': 'Make each day your masterpiece.',
+        'use': 'Use your time wisely.',
+        'find': 'You will find what you are looking for.',
+        'give': 'Give without expecting anything back.',
+        'tell': 'Tell me a story.',
+        'work': 'Hard work pays off in the end.',
+        'call': 'Call me when you arrive safely.',
+        'try': 'Try and try until you succeed.',
+        'ask': 'Ask and you shall receive.',
+        'need': 'All you need is love.',
+        'feel': 'I feel happy today.',
+        'become': 'She wants to become a doctor.',
+        'leave': 'Leave no trace behind.',
+        'put': 'Put your thoughts into words.'
+      };
+
+      if (contextMap[w]) return contextMap[w];
+      
+      const templates = [
+        `"${word}" is frequently used in everyday English conversations.`,
+        `Learning "${word}" helps you express yourself better.`,
+        `The word "${word}" appears often in news articles.`,
+        `"${word}" can be used in both formal and informal contexts.`,
+        `Try using "${word}" three times today to remember it.`,
+        `"${word}" has a rich history in the English language.`,
+        `Many learners find "${word}" useful for daily communication.`,
+        `Understanding "${word}" will improve your fluency.`,
+        `"${word}" is a versatile word with many applications.`,
+        `Practice saying "${word}" out loud to master it.`
+      ];
+      
+      return templates[Math.floor(Math.random() * templates.length)];
+    }
+
+    wordPairs = wordPairs.map(w => {
+      return {
+        ...w,
+        kept: w.kept === true,
+        sentence: w.sentence || smartAISentence(w.en)
+      };
+    });
+
+    // New function to update the fraction circle
+    function updateMasteryCircle() {
+      const totalActive = wordPairs.length; // all words count (active+kept) because we count all words in learning journey
+      const keptCount = wordPairs.filter(w => w.kept).length;
+      
+      circleFraction.textContent = `${keptCount}/${totalActive}`;
+      
+      if (totalActive > 0) {
+        const fillPercent = (keptCount / totalActive) * 360;
+        circleFill.style.background = `conic-gradient(#55dd88 0deg ${fillPercent}deg, transparent ${fillPercent}deg 360deg)`;
+      } else {
+        circleFill.style.background = `conic-gradient(transparent 0deg 360deg)`;
+      }
+
+      if (keptCount > 0 && keptCount === totalActive) {
+        masteryCircle.classList.add('filled');
+      } else {
+        masteryCircle.classList.remove('filled');
+      }
+    }
 
     function isPersian(text) {
       if (!text.trim()) return false;
@@ -387,7 +611,8 @@
           faWord = translation;
         }
 
-        wordPairs.push({ en: enWord, fa: faWord, kept: false });
+        const sentence = smartAISentence(enWord);
+        wordPairs.push({ en: enWord, fa: faWord, kept: false, sentence });
         persistAndRender();
         inputEl.value = '';
         updateLangHint();
@@ -400,7 +625,6 @@
       }
     }
 
-    // --- EDITED: editWord now fetches new translation based on new english text ---
     async function editWord(index) {
       const word = wordPairs[index];
       if (!word) return;
@@ -408,30 +632,26 @@
       if (!newEn || newEn.trim() === '' || newEn === word.en) return;
 
       loadingIndicator.classList.add('show');
-      inputEl.disabled = true;  // block input during translation
+      inputEl.disabled = true;
 
       try {
-        // detect if new text is persian? but we are editing english field, so assume english.
-        // However to be safe: if user enters persian in prompt, we handle.
         const text = newEn.trim();
         const persian = isPersian(text);
         let newEnWord, newFaWord;
 
         if (persian) {
-          // user wrote persian in english field? we treat as persian source
           const translation = await translateWithAPI(text, 'fa', 'en');
-          newEnWord = translation;   // translated to english
+          newEnWord = translation;
           newFaWord = text;
         } else {
-          // english source -> translate to persian
           const translation = await translateWithAPI(text, 'en', 'fa');
           newEnWord = text;
           newFaWord = translation;
         }
 
-        // update the word pair
         wordPairs[index].en = newEnWord;
         wordPairs[index].fa = newFaWord;
+        wordPairs[index].sentence = smartAISentence(newEnWord);
         persistAndRender();
       } catch (err) {
         showError('translation failed, word not updated');
@@ -501,24 +721,31 @@
       }
 
       attachEvents();
+      updateMasteryCircle(); // update circle after every render
     }
 
     function renderItem(pair, number, globalIdx, isKeptPage) {
       const enEsc = escapeHtml(pair.en);
       const faEsc = escapeHtml(pair.fa);
+      const sentenceEsc = escapeHtml(pair.sentence || smartAISentence(pair.en));
       const tickBtn = isKeptPage ? '' : `<button class="icon-btn" data-global-index="${globalIdx}" data-action="tick" title="keep">✔</button>`;
       return `
-        <div class="word-item">
+        <div class="word-item" data-global-index="${globalIdx}">
           <div class="word-main">
-            <span class="word-number">#${number}</span>
-            <span class="en-word">${enEsc}</span>
-            <span class="fa-word">${faEsc}</span>
+            <div class="word-pair">
+              <span class="word-number">#${number}</span>
+              <span class="en-word">${enEsc}</span>
+              <span class="fa-word">${faEsc}</span>
+            </div>
+            <div class="ai-sentence">💡 ${sentenceEsc}</div>
           </div>
-          <div class="icon-group">
-            <button class="icon-btn" data-global-index="${globalIdx}" data-action="edit">✎</button>
-            <button class="icon-btn" data-global-index="${globalIdx}" data-action="voice">🔊</button>
-            ${tickBtn}
-            <button class="icon-btn delete-btn" data-global-index="${globalIdx}" data-action="delete">✕</button>
+          <div class="right-group">
+            <div class="icon-group">
+              <button class="icon-btn" data-global-index="${globalIdx}" data-action="edit">✎</button>
+              <button class="icon-btn" data-global-index="${globalIdx}" data-action="voice">🔊</button>
+              ${tickBtn}
+              <button class="icon-btn delete-btn" data-global-index="${globalIdx}" data-action="delete">✕</button>
+            </div>
           </div>
         </div>
       `;
@@ -560,7 +787,6 @@
       renderAll();
     }
 
-    // page switching
     mainPageBtn.addEventListener('click', () => {
       mainPage.classList.add('active-page');
       keptPage.classList.remove('active-page');
