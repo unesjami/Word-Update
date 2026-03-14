@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="icon" type="image/png" href="https://i.ibb.co/GQX4pNkL/logo1.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Word Update · mastery fraction</title>
+  <title>Word Update · edit fixes translation</title>
   <!-- Vazirmatn for Persian -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
-  <!-- favicon placeholder (replace with your own) -->
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA3hJREFUWEftl0uIVXUUx3/nzsxM88ZGKLFMYyFDixqW9rAQLVpEi4iWLYK2UVEUBEEQBVEQBEG0qGgRFLSJNlG0GqFoYZSZ5XvUzJzX3O7/nHvvzJ2Z7nXGoOCCP/fxP+f7/73eUa1W1a9/3x9X/78O/A9HwAL+/vev1Gg0VKlU1NPTk8y1Wq2kXC6rVqtpYmJC1WpV1WpVU1NTSZ+ZmVEul1Mul1Mul1O1Wk3qSqWigYEB7dq1S7t379bOnTu1fft2jY6OamJiQoVCIZnr6+vT+vXr9fDDD+uxxx7Tgw8+qPXr12vz5s2q1WoaGBhIoIeHh/X444/rjTfe0ObNmzU0NKRKpaJ8Pq+pqSlt2bJFzz77rHbt2qXt27dramoqOetgO59wPgJ8rVKpqFwuJ8d7eXnfffdpx44deuKJJ7Rr1y4NDw8rl8sln89ms3r//ff1ySefaPv27dq8ebMKhUJS29uvv/6q3bt368knn9RLL72kO+64I2FhcHBQ7777rj7//HNt2LBBmUwmOYfAw8PD2rJli7744gsNDQ1pamrqjHMJzECAw2NjYzp69KgOHDiggwcP6uDBgzpy5IiOHDmio0eP6ujRozp27Jh++eUX/fLLL/r555/122+/6cSJEzp58qR+/fVXnTp1SsePH9fJkyf1zz//6Pfff9fJkyc1Pj6uw4cP6/jx4xodHdU333yjTz/9VB9//LE++ugjbd68WUNDQ+ru7lZPT0+SwszMjLZs2aL3339fW7du1dq1a9XT06Oenh6tXbtWmzZt0o4dO3Trrbert7c3JYzvP6smxHdnZ6cymYxKpZKmpqbO6MvPmDFTSqVS6u7uVmdnZzqfTqeT8/P5fDqfSqWS+XK5nMwXi0VNT08nnx0dHUm2u7v7z9h2KpX6j2xnMpmk5vP5ZG5ubi6pne1KpaJcLqd8Pp98FovFpHa2K5WK8vm88vm8isVikv348eMqFovJ3NzcXDKfzWb/l+1SqZTUdrZzuZxyuVxS2/tu9/1/2bZ7P5/PJ3N2bW1+bm4uqe29t7W1/Z9sNxoNVSoVFYvFpLb33u77/7Jt99/W1nZGbefa2tqS2u7d/n2z2Uz+LpVK6m+27d5tNptJbff9f7IzMzOTnJ+dnVWz2Uxqu++bzeY52c5ms+fc+1/bnp6eTmp7321tbf/JdjabPWfevu/f/5ftfD6vcrms2dnZ/2Q7m80mn7a27b5vNBrJ/V/btn/PZDJJbff9f7JdKpWS2u77vwHwP6XwH47AfzgC/wEujpAVu8V3WAAAAABJRU5ErkJggg==">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -17,32 +17,325 @@
     }
 
     html, body {
-      width: 100%;
       height: 100%;
-      background: #080c12;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      color: #d9e6f5;
+      width: 100%;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+      color: #1e1e1e;
+      transition: background 0.3s ease, color 0.2s ease;
+    }
+
+    body.dark-mode {
+      background: linear-gradient(135deg, #121212 0%, #1a1c1e 100%);
+      color: #e0e0e0;
+    }
+
+    .card {
+      background-color: #ffffff;
+      transition: background 0.3s ease, border 0.2s ease;
+      border: 1px solid #e2e2e2;
+    }
+
+    body.dark-mode .card {
+      background-color: #1f2327;
+      border: 1px solid #3a3f44;
+    }
+
+    .shadow-soft {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    body.dark-mode .shadow-soft {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .stat-badge {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      background: #f0f0f0;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    body.dark-mode .stat-badge {
+      background: #2f3a44;
+      color: #d1dce6;
+    }
+
+    /* animation for word updates */
+    @keyframes wordPop {
+      0% { transform: scale(1); background-color: transparent; }
+      30% { transform: scale(1.01); background-color: rgba(255, 215, 0, 0.1); }
+      100% { transform: scale(1); background-color: transparent; }
+    }
+    .word-highlight {
+      animation: wordPop 0.2s ease-out;
+    }
+
+    .word-item {
+      transition: background 0.15s ease;
+    }
+
+    .icon-btn {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      font-size: 18px;
+      line-height: 1;
+      color: #4a4a4a;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      transition: background 0.1s;
+    }
+    body.dark-mode .icon-btn {
+      color: #c0c0c0;
+    }
+    .icon-btn:hover {
+      background: rgba(0,0,0,0.05);
+    }
+    body.dark-mode .icon-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .delete-btn {
+      color: #b91c1c;
+    }
+    body.dark-mode .delete-btn {
+      color: #f28b82;
+    }
+
+    .lang-mini {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      background: #f0f0f0;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    body.dark-mode .lang-mini {
+      background: #2f3a44;
+      color: #d1dce6;
+    }
+
+    .small-input {
+      background: #ffffff;
+      border: 1px solid #e2e2e2;
+      border-radius: 40px;
+      padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      width: auto;
+      min-width: 300px;
+      max-width: 450px;
+      transition: background 0.3s ease, border 0.2s ease;
+    }
+    body.dark-mode .small-input {
+      background: #1f2327;
+      border: 1px solid #3a3f44;
+    }
+
+    #wordInput {
+      background: transparent;
+      border: none;
+      padding: 0.55rem 0.2rem 0.55rem 0;
+      font-size: 0.95rem;
+      color: #1e1e1e;
+      outline: none;
+      width: 180px;
+      flex: 1;
+      font-family: 'Poppins', sans-serif;
+    }
+    body.dark-mode #wordInput {
+      color: #e0e0e0;
+    }
+
+    #wordInput::placeholder {
+      color: #aaaaaa;
+      font-weight: 300;
+      font-size: 0.8rem;
+    }
+
+    .page-switch {
+      display: flex;
+      gap: 0.2rem;
+      background: #f0f0f0;
+      padding: 0.15rem;
+      border-radius: 40px;
+      border: 1px solid #e2e2e2;
+      margin-left: 0.5rem;
+    }
+    body.dark-mode .page-switch {
+      background: #2f3a44;
+      border-color: #3a3f44;
+    }
+    .page-btn {
+      background: transparent;
+      border: none;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    body.dark-mode .page-btn {
+      color: #c0c0c0;
+    }
+    .page-btn.active {
+      background: #2c3e50;
+      color: white;
+    }
+    body.dark-mode .page-btn.active {
+      background: #6b8c9e;
+      color: #121212;
+    }
+
+    .dark-toggle {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #f0f0f0;
+      border: 1px solid #e2e2e2;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.2s;
+    }
+    body.dark-mode .dark-toggle {
+      background: #2f3a44;
+      border-color: #3a3f44;
+    }
+
+    .word-flow {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow-y: auto;
+      padding: 0.5rem 0.2rem;
+      scrollbar-width: thin;
+      scrollbar-color: #cccccc #f0f0f0;
+      flex: 1;
+      scroll-behavior: smooth;
+    }
+    body.dark-mode .word-flow {
+      scrollbar-color: #4a555f #1f2327;
+    }
+
+    .word-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0.2rem 0.75rem 0.8rem;
+      margin: 0.2rem 0;
+      border-bottom: 1px solid #e2e2e2;
+      transition: border 0.2s ease;
+    }
+    body.dark-mode .word-item {
+      border-bottom: 1px solid #3a3f44;
+    }
+
+    .word-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      flex: 1;
+    }
+
+    .en-word {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #1e1e1e;
+      word-break: break-word;
+    }
+    body.dark-mode .en-word {
+      color: #e0e0e0;
+    }
+
+    .fa-word {
+      font-weight: 400;
+      font-size: 0.95rem;
+      direction: rtl;
+      font-family: 'Vazirmatn', sans-serif;
+      color: #4a4a4a;
+      word-break: break-word;
+      line-height: 1.5;
+    }
+    body.dark-mode .fa-word {
+      color: #c0c0c0;
+    }
+
+    .empty-message {
+      color: #999;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      border: 1px dashed #e2e2e2;
+      border-radius: 12px;
+    }
+    body.dark-mode .empty-message {
+      color: #666;
+      border-color: #3a3f44;
+    }
+
+    .loading, .error-message {
+      display: none;
+      align-items: center;
+      gap: 0.4rem;
+      background: #f0f0f0;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      color: #333;
+      border: 1px solid #e2e2e2;
+    }
+    body.dark-mode .loading, body.dark-mode .error-message {
+      background: #2f3a44;
+      color: #d1dce6;
+      border-color: #3a3f44;
+    }
+
+    .loading.show, .error-message.show {
+      display: inline-flex;
+    }
+
+    .spinner {
+      width: 12px;
+      height: 12px;
+      border: 2px solid #2c3e50;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    body.dark-mode .spinner {
+      border-color: #6b8c9e;
+      border-top-color: transparent;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     .app {
       width: 100%;
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1.5rem 2rem 2rem 2rem;
-      background: #0b111a;
+      padding: 1rem 2rem 1.5rem 2rem;
     }
 
-    .top-signature {
-      width: 100%;
-      text-align: left;
-      font-size: 0.9rem;
-      font-weight: 350;
-      letter-spacing: 1px;
-      color: #6585a8;
-      margin-bottom: 0.2rem;
+    .header-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 0.5rem;
     }
 
     .word-stage {
@@ -66,332 +359,18 @@
       display: flex;
     }
 
-    .word-flow {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      overflow-y: auto;
-      padding: 0.5rem 0.2rem;
-      scrollbar-width: thin;
-      scrollbar-color: #3d5a7c #131f2c;
-      flex: 1;
-    }
-
-    @keyframes smartFlow {
-      0% { 
-        opacity: 0.6; 
-        transform: translateX(-8px) translateY(0); 
-        border-left: 2px solid #4aa0ff; 
-        box-shadow: 0 0 5px rgba(74, 160, 255, 0.2);
-      }
-      30% { 
-        opacity: 1; 
-        transform: translateX(3px) translateY(-2px); 
-        border-left: 2px solid #7fb9ff; 
-        box-shadow: 0 0 15px rgba(127, 185, 255, 0.4);
-      }
-      60% { 
-        transform: translateX(-2px) translateY(2px); 
-        border-left: 2px solid #4aa0ff; 
-        box-shadow: 0 0 8px rgba(74, 160, 255, 0.3);
-      }
-      100% { 
-        opacity: 1; 
-        transform: translateX(0) translateY(0); 
-        border-left: 2px solid transparent; 
-        box-shadow: none;
-      }
-    }
-
-    .word-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.7rem 0.2rem 0.7rem 0.8rem;
-      margin: 0.2rem 0;
-      border-bottom: 1px solid #1c2b3a;
-      transition: all 0.2s ease;
-      animation: smartFlow 1.6s ease-out forwards;
-    }
-
-    .word-main {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      flex: 1;
-    }
-
-    .word-pair {
-      display: flex;
-      align-items: baseline;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-    }
-
-    .word-number {
-      font-size: 0.65rem;
-      color: #4f6e91;
-      min-width: 1.8rem;
-    }
-
-    .en-word {
-      font-weight: 430;
-      font-size: 1.1rem;
-      color: #e0efff;
-    }
-
-    .fa-word {
-      font-weight: 350;
-      font-size: 1rem;
-      direction: rtl;
-      font-family: 'Vazirmatn', sans-serif;
-      color: #b6d0ec;
-    }
-
-    .ai-sentence {
-      font-size: 0.7rem;
-      color: #9bb9de;
-      margin-left: 2.6rem;
-      margin-top: 0.1rem;
-      font-style: normal;
-      letter-spacing: 0.1px;
-      max-width: 95%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      border-left: 1px solid #2f4d70;
-      padding-left: 0.5rem;
-      background: linear-gradient(90deg, #132433 0%, transparent 100%);
-      border-radius: 0 4px 4px 0;
-    }
-
-    .right-group {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
     .icon-group {
       display: flex;
-      gap: 0.6rem;
-      align-items: center;
-    }
-
-    .icon-btn {
-      background: none;
-      border: none;
-      color: #779cc2;
-      font-size: 1.1rem;
-      cursor: pointer;
-      padding: 0.2rem;
-      transition: 0.1s;
-      line-height: 1;
-    }
-
-    .icon-btn:hover {
-      color: #c0deff;
-      transform: scale(1.1);
-    }
-
-    .delete-btn {
-      color: #9f7b8f;
-      font-size: 1.2rem;
-    }
-    .delete-btn:hover {
-      color: #ffa7b9;
-    }
-
-    /* mastery circle - shows fraction and fills progressively */
-    .mastery-circle {
-      position: fixed;
-      top: 20px;
-      right: 25px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #1e3245;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #d0e2ff;
-      box-shadow: 0 0 10px #1f3f5e;
-      transition: all 0.3s ease;
-      z-index: 100;
-      border: 2px solid #3d6380;
-    }
-
-    .mastery-circle.filled {
-      border-color: #7ae9a7;
-      color: white;
-      box-shadow: 0 0 20px #55dd88;
-    }
-
-    /* fill overlay using conic gradient */
-    .mastery-circle .fill-overlay {
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: conic-gradient(#55dd88 0deg 0deg, transparent 0deg 360deg);
-      mask: radial-gradient(circle at center, transparent 55%, black 56%);
-      -webkit-mask: radial-gradient(circle at center, transparent 55%, black 56%);
-      transition: background 0.3s ease;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .mastery-circle span {
-      position: relative;
-      z-index: 2;
-      line-height: 1.2;
-      text-align: center;
-    }
-
-    .mastery-circle .fraction {
-      font-size: 0.7rem;
-      opacity: 0.9;
-    }
-
-    .empty-message {
-      color: #3d5c7c;
-      padding: 2rem 0;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    .input-panel-bottom {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 0.8rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .small-input {
-      background: #1a2635;
-      border-radius: 40px;
-      padding: 0.3rem 0.3rem 0.3rem 1.5rem;
-      border: 1px solid #2f4057;
-      display: inline-flex;
-      align-items: center;
-      width: auto;
-      min-width: 300px;
-      max-width: 450px;
-    }
-
-    #wordInput {
-      background: transparent;
-      border: none;
-      padding: 0.55rem 0.2rem 0.55rem 0;
-      font-size: 0.95rem;
-      color: #eaf1ff;
-      outline: none;
-      width: 180px;
-      flex: 1;
-    }
-
-    #wordInput::placeholder {
-      color: #5f7da2;
-      font-weight: 300;
-      font-size: 0.9rem;
-      opacity: 1;
-    }
-
-    .lang-mini {
-      background: #1f3245;
-      border-radius: 30px;
-      padding: 0.3rem 1rem;
-      font-size: 0.65rem;
-      color: #b3d1fc;
-      display: flex;
-      gap: 0.3rem;
-      white-space: nowrap;
-      border: 1px solid #385375;
-    }
-
-    .status-line {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      min-height: 2rem;
-      margin: 0.2rem 0;
-    }
-
-    .loading, .error-message {
-      display: none;
-      align-items: center;
-      gap: 0.4rem;
-      background: #1c2a38;
-      padding: 0.2rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.7rem;
-      color: #b7d6ff;
-      border: 1px solid #3b5470;
-    }
-
-    .loading.show, .error-message.show {
-      display: inline-flex;
-    }
-
-    .spinner {
-      width: 12px;
-      height: 12px;
-      border: 2px solid #7eb0ff;
-      border-top-color: transparent;
-      border-radius: 50%;
-      animation: spin 0.7s linear infinite;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .page-switch {
-      display: flex;
       gap: 0.2rem;
-      background: #1c2736;
-      padding: 0.15rem;
-      border-radius: 40px;
-      border: 1px solid #2f4157;
+      align-items: center;
       margin-left: 0.5rem;
-    }
-    .page-btn {
-      background: transparent;
-      border: none;
-      padding: 0.2rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.7rem;
-      color: #91aecf;
-      cursor: pointer;
-    }
-    .page-btn.active {
-      background: #2a405b;
-      color: white;
-    }
-
-    /* hide extra text */
-    .top-signature span, .edit-sync {
-      display: none;
-    }
-
-    footer, .list-header, .enter-hint, .def-hint, .ai-badge {
-      display: none;
     }
   </style>
 </head>
 <body>
 <div class="app">
-  <div class="top-signature">Word Update · mastery</div>
-
-  <!-- Dynamic fraction circle -->
-  <div class="mastery-circle" id="masteryCircle">
-    <div class="fill-overlay" id="circleFill"></div>
-    <span id="circleFraction">0/0</span>
-    <span class="fraction">kept</span>
+  <div class="header-bar">
+    <div class="dark-toggle" id="darkModeToggle" title="Toggle dark mode">🌙</div>
   </div>
 
   <div class="word-stage">
@@ -403,16 +382,16 @@
     </div>
   </div>
 
-  <div class="status-line">
+  <div class="status-line flex justify-center items-center gap-4 min-h-[2rem] my-1">
     <div class="loading" id="loadingIndicator">
-      <div class="spinner"></div><span>...</span>
+      <div class="spinner"></div><span>translating...</span>
     </div>
     <div class="error-message" id="errorMessage"></div>
   </div>
 
-  <div class="input-panel-bottom">
+  <div class="input-panel-bottom w-full flex justify-center mt-2 mb-1">
     <div class="small-input">
-      <input type="text" id="wordInput" placeholder="Add word here" autofocus>
+      <input type="text" id="wordInput" placeholder="type word or paragraph (en/fa)" autofocus>
       <div class="lang-mini" id="langDisplay">
         <span id="detectedLang">EN</span>
         <span>→</span>
@@ -429,7 +408,7 @@
 <script>
   (function() {
     let wordPairs = [];
-    const STORAGE_KEY = 'word_update_fraction_v2';
+    const STORAGE_KEY = 'word_update_fix_v6';
 
     const inputEl = document.getElementById('wordInput');
     const mainList = document.getElementById('listInner');
@@ -438,128 +417,79 @@
     const targetLangSpan = document.getElementById('targetLang');
     const loadingIndicator = document.getElementById('loadingIndicator');
     const errorMessage = document.getElementById('errorMessage');
-    const masteryCircle = document.getElementById('masteryCircle');
-    const circleFill = document.getElementById('circleFill');
-    const circleFraction = document.getElementById('circleFraction');
+    const darkModeToggle = document.getElementById('darkModeToggle');
 
     const mainPageBtn = document.getElementById('showMainPage');
     const keptPageBtn = document.getElementById('showKeptPage');
     const mainPage = document.getElementById('mainPage');
     const keptPage = document.getElementById('keptPage');
+    const mainWordFlow = document.getElementById('listInner');
+    const keptWordFlow = document.getElementById('keptListInner');
 
+    // Dark mode handling
+    let isDark = localStorage.getItem('wordapp_dark') === 'true';
+    
+    function applyDarkMode() {
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.textContent = '☀️';
+      } else {
+        document.body.classList.remove('dark-mode');
+        darkModeToggle.textContent = '🌙';
+      }
+      localStorage.setItem('wordapp_dark', isDark);
+    }
+    applyDarkMode();
+
+    darkModeToggle.addEventListener('click', () => {
+      isDark = !isDark;
+      applyDarkMode();
+    });
+
+    // Load saved tasks - start with empty array if nothing saved
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         wordPairs = JSON.parse(saved);
       } else {
-        wordPairs = [
-          { en: 'clarity', fa: 'وضوح', kept: false },
-          { en: 'presence', fa: 'حضور', kept: false },
-        ];
+        wordPairs = [];
       }
-    } catch (e) { wordPairs = []; }
-
-    function smartAISentence(word) {
-      if (!word) return 'example sentence missing.';
-      const w = word.toLowerCase().trim();
-      
-      const contextMap = {
-        'clarity': 'The clarity of her explanation made everything understandable.',
-        'presence': 'His presence alone brought a sense of calm to the room.',
-        'example': 'This is a perfect example of how context works.',
-        'translation': 'A good translation captures both meaning and tone.',
-        'hello': 'Hello is the most common greeting in English.',
-        'world': 'The world is full of fascinating places to explore.',
-        'peace': 'Peace begins with a smile, she said.',
-        'light': 'Light travels faster than sound, which is why we see lightning first.',
-        'dark': 'The dark forest seemed mysterious and ancient.',
-        'strong': 'Strong winds knocked down several trees.',
-        'quick': 'The quick brown fox jumps over the lazy dog.',
-        'happy': 'Happy people often spread joy to others.',
-        'sad': 'The sad movie made everyone cry.',
-        'big': 'A big responsibility comes with great power.',
-        'small': 'Small details can make a big difference.',
-        'good': 'Good habits lead to a successful life.',
-        'bad': 'Bad weather forced the event to cancel.',
-        'new': 'A new beginning brings hope and excitement.',
-        'old': 'The old house had many stories to tell.',
-        'day': 'Each new day is a chance to improve.',
-        'night': 'The night sky was filled with stars.',
-        'love': 'Love is patient, love is kind.',
-        'hate': 'Hate only leads to more suffering.',
-        'life': 'Life is what happens when you are busy making plans.',
-        'time': 'Time waits for no one.',
-        'person': 'She is the kindest person I have ever met.',
-        'place': 'This place feels like home.',
-        'thing': 'The most important thing is to stay curious.',
-        'way': 'There is always a way forward.',
-        'look': 'Look before you leap, they say.',
-        'make': 'Make each day your masterpiece.',
-        'use': 'Use your time wisely.',
-        'find': 'You will find what you are looking for.',
-        'give': 'Give without expecting anything back.',
-        'tell': 'Tell me a story.',
-        'work': 'Hard work pays off in the end.',
-        'call': 'Call me when you arrive safely.',
-        'try': 'Try and try until you succeed.',
-        'ask': 'Ask and you shall receive.',
-        'need': 'All you need is love.',
-        'feel': 'I feel happy today.',
-        'become': 'She wants to become a doctor.',
-        'leave': 'Leave no trace behind.',
-        'put': 'Put your thoughts into words.'
-      };
-
-      if (contextMap[w]) return contextMap[w];
-      
-      const templates = [
-        `"${word}" is frequently used in everyday English conversations.`,
-        `Learning "${word}" helps you express yourself better.`,
-        `The word "${word}" appears often in news articles.`,
-        `"${word}" can be used in both formal and informal contexts.`,
-        `Try using "${word}" three times today to remember it.`,
-        `"${word}" has a rich history in the English language.`,
-        `Many learners find "${word}" useful for daily communication.`,
-        `Understanding "${word}" will improve your fluency.`,
-        `"${word}" is a versatile word with many applications.`,
-        `Practice saying "${word}" out loud to master it.`
-      ];
-      
-      return templates[Math.floor(Math.random() * templates.length)];
+    } catch (e) { 
+      wordPairs = []; 
     }
 
-    wordPairs = wordPairs.map(w => {
-      return {
-        ...w,
-        kept: w.kept === true,
-        sentence: w.sentence || smartAISentence(w.en)
-      };
-    });
+    wordPairs = wordPairs.map(w => ({ ...w, kept: w.kept === true }));
 
-    // New function to update the fraction circle
-    function updateMasteryCircle() {
-      const totalActive = wordPairs.length; // all words count (active+kept) because we count all words in learning journey
-      const keptCount = wordPairs.filter(w => w.kept).length;
-      
-      circleFraction.textContent = `${keptCount}/${totalActive}`;
-      
-      if (totalActive > 0) {
-        const fillPercent = (keptCount / totalActive) * 360;
-        circleFill.style.background = `conic-gradient(#55dd88 0deg ${fillPercent}deg, transparent ${fillPercent}deg 360deg)`;
-      } else {
-        circleFill.style.background = `conic-gradient(transparent 0deg 360deg)`;
-      }
-
-      if (keptCount > 0 && keptCount === totalActive) {
-        masteryCircle.classList.add('filled');
-      } else {
-        masteryCircle.classList.remove('filled');
-      }
+    // Function to scroll to the latest word
+    function scrollToLatestWord() {
+      setTimeout(() => {
+        const activePage = document.querySelector('.page.active-page');
+        if (!activePage) return;
+        
+        const wordFlow = activePage.querySelector('.word-flow');
+        if (!wordFlow) return;
+        
+        const wordItems = activePage.querySelectorAll('.word-item');
+        if (wordItems.length > 0) {
+          const lastItem = wordItems[wordItems.length - 1];
+          lastItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 100); // Small delay to ensure DOM is updated
     }
 
+    // Improved Persian detection with typing mistakes handling
     function isPersian(text) {
-      if (!text.trim()) return false;
-      return /[\u0600-\u06FF\u0750-\u077F]/.test(text);
+      if (!text || !text.trim()) return false;
+      // Check for Persian/Arabic Unicode range
+      // Also handles texts with mixed Latin/Persian by checking ratio
+      const persianChars = (text.match(/[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/g) || []);
+      const totalChars = text.replace(/\s/g, '').length;
+      
+      if (totalChars === 0) return false;
+      
+      // If more than 30% of non-space chars are Persian, consider it Persian text
+      // This helps with typos and mixed input
+      return (persianChars.length / totalChars) > 0.3;
     }
 
     function updateLangHint() {
@@ -577,17 +507,73 @@
     function showError(msg) {
       errorMessage.textContent = msg;
       errorMessage.classList.add('show');
-      setTimeout(() => errorMessage.classList.remove('show'), 2000);
+      setTimeout(() => errorMessage.classList.remove('show'), 3000);
     }
 
-    async function translateWithAPI(text, source, target) {
-      const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${source}|${target}`;
-      const resp = await fetch(url);
-      const data = await resp.json();
-      if (data.responseStatus === 200 && data.responseData?.translatedText) {
-        return data.responseData.translatedText;
+    function setHighlight(index) {
+      const items = document.querySelectorAll('.word-item');
+      if (items[index]) {
+        items[index].classList.add('word-highlight');
+        setTimeout(() => {
+          items[index].classList.remove('word-highlight');
+        }, 300);
       }
-      throw new Error('translation failed');
+    }
+
+    // Advanced translation function that handles paragraphs and typos
+    async function translateWithAPI(text, source, target) {
+      // Clean up the text - remove extra spaces but keep structure
+      const cleanText = text.trim().replace(/\s+/g, ' ');
+      
+      // Try multiple translation services for best results
+      
+      // 1. Google Translate (best for paragraphs and Persian)
+      try {
+        const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${source}&tl=${target}&dt=t&q=${encodeURIComponent(cleanText)}`;
+        const resp = await fetch(url);
+        const data = await resp.json();
+        
+        if (data && data[0]) {
+          // Google returns array of sentences - combine them
+          let fullTranslation = '';
+          for (let i = 0; i < data[0].length; i++) {
+            if (data[0][i] && data[0][i][0]) {
+              fullTranslation += data[0][i][0];
+            }
+          }
+          if (fullTranslation) {
+            return fullTranslation;
+          }
+        }
+      } catch (e) {
+        console.log('Google Translate failed, trying backup...', e);
+      }
+      
+      // 2. MyMemory Translator (good for phrases, unlimited)
+      try {
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(cleanText)}&langpair=${source}|${target}`;
+        const resp = await fetch(url);
+        const data = await resp.json();
+        if (data.responseStatus === 200 && data.responseData?.translatedText) {
+          return data.responseData.translatedText;
+        }
+      } catch (e) {
+        console.log('MyMemory failed');
+      }
+      
+      // 3. Lingva Translate (alternative Google Translate frontend)
+      try {
+        const url = `https://lingva.ml/api/v1/${source}/${target}/${encodeURIComponent(cleanText)}`;
+        const resp = await fetch(url);
+        const data = await resp.json();
+        if (data && data.translation) {
+          return data.translation;
+        }
+      } catch (e) {
+        console.log('Lingva failed');
+      }
+      
+      throw new Error('All translation services failed');
     }
 
     async function addFromInput() {
@@ -602,22 +588,36 @@
         let enWord, faWord;
 
         if (persian) {
+          // Persian to English
           const translation = await translateWithAPI(raw, 'fa', 'en');
-          faWord = raw;
-          enWord = translation;
+          faWord = raw;  // Keep original Persian
+          enWord = translation;  // English translation
         } else {
+          // English to Persian
           const translation = await translateWithAPI(raw, 'en', 'fa');
-          enWord = raw;
-          faWord = translation;
+          enWord = raw;  // Keep original English
+          faWord = translation;  // Persian translation
         }
 
-        const sentence = smartAISentence(enWord);
-        wordPairs.push({ en: enWord, fa: faWord, kept: false, sentence });
+        // Store as a single item (can be word, sentence, or paragraph)
+        wordPairs.push({ 
+          en: enWord, 
+          fa: faWord, 
+          kept: false,
+          timestamp: Date.now()
+        });
+        
         persistAndRender();
+        
+        // Scroll to show the latest word
+        scrollToLatestWord();
+        
         inputEl.value = '';
         updateLangHint();
+        setHighlight(wordPairs.length - 1);
       } catch (err) {
-        showError(err.message);
+        showError('Translation failed. Check your connection and try again.');
+        console.error(err);
       } finally {
         loadingIndicator.classList.remove('show');
         inputEl.disabled = false;
@@ -628,14 +628,18 @@
     async function editWord(index) {
       const word = wordPairs[index];
       if (!word) return;
-      const newEn = prompt('Edit English word / sentence:', word.en);
-      if (!newEn || newEn.trim() === '' || newEn === word.en) return;
+      
+      // Show current text in prompt
+      const currentText = word.en;
+      const newText = prompt('Edit text (can be word, sentence, or paragraph):', currentText);
+      
+      if (!newText || newText.trim() === '' || newText === currentText) return;
 
       loadingIndicator.classList.add('show');
       inputEl.disabled = true;
 
       try {
-        const text = newEn.trim();
+        const text = newText.trim();
         const persian = isPersian(text);
         let newEnWord, newFaWord;
 
@@ -651,10 +655,13 @@
 
         wordPairs[index].en = newEnWord;
         wordPairs[index].fa = newFaWord;
-        wordPairs[index].sentence = smartAISentence(newEnWord);
+        wordPairs[index].timestamp = Date.now();
+        
         persistAndRender();
+        setHighlight(index);
+        scrollToLatestWord();
       } catch (err) {
-        showError('translation failed, word not updated');
+        showError('Translation failed. Please try again.');
       } finally {
         loadingIndicator.classList.remove('show');
         inputEl.disabled = false;
@@ -678,11 +685,18 @@
 
     function speakEnglish(text) {
       if (!window.speechSynthesis) return;
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.9;
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(utterance);
+      
+      // Split long text into sentences for better speech
+      const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+      
+      sentences.forEach((sentence, i) => {
+        setTimeout(() => {
+          const utterance = new SpeechSynthesisUtterance(sentence.trim());
+          utterance.lang = 'en-US';
+          utterance.rate = 0.9;
+          window.speechSynthesis.speak(utterance);
+        }, i * 500); // Delay between sentences
+      });
     }
 
     function escapeHtml(unsafe) {
@@ -694,58 +708,68 @@
       });
     }
 
+    function truncateText(text, maxLength = 100) {
+      if (text.length <= maxLength) return text;
+      return text.substring(0, maxLength) + '...';
+    }
+
     function renderAll() {
       const active = wordPairs.filter(w => !w.kept);
       const kept = wordPairs.filter(w => w.kept);
 
       if (active.length === 0) {
-        mainList.innerHTML = `<div class="empty-message">no active words</div>`;
+        mainList.innerHTML = `<div class="empty-message">✨ no active words — type something above</div>`;
       } else {
         let html = '';
-        active.forEach((pair, idx) => {
-          const globalIdx = wordPairs.findIndex(w => w.en === pair.en && w.fa === pair.fa);
-          html += renderItem(pair, idx+1, globalIdx, false);
+        active.forEach((pair) => {
+          const globalIdx = wordPairs.findIndex(w => 
+            w.en === pair.en && w.fa === pair.fa && w.timestamp === pair.timestamp
+          );
+          html += renderItem(pair, globalIdx, false);
         });
         mainList.innerHTML = html;
       }
 
       if (kept.length === 0) {
-        keptList.innerHTML = `<div class="empty-message">no kept words</div>`;
+        keptList.innerHTML = `<div class="empty-message">📦 no kept words</div>`;
       } else {
         let keptHtml = '';
-        kept.forEach((pair, idx) => {
-          const globalIdx = wordPairs.findIndex(w => w.en === pair.en && w.fa === pair.fa);
-          keptHtml += renderItem(pair, idx+1, globalIdx, true);
+        kept.forEach((pair) => {
+          const globalIdx = wordPairs.findIndex(w => 
+            w.en === pair.en && w.fa === pair.fa && w.timestamp === pair.timestamp
+          );
+          keptHtml += renderItem(pair, globalIdx, true);
         });
         keptList.innerHTML = keptHtml;
       }
 
       attachEvents();
-      updateMasteryCircle(); // update circle after every render
     }
 
-    function renderItem(pair, number, globalIdx, isKeptPage) {
+    function renderItem(pair, globalIdx, isKeptPage) {
       const enEsc = escapeHtml(pair.en);
       const faEsc = escapeHtml(pair.fa);
-      const sentenceEsc = escapeHtml(pair.sentence || smartAISentence(pair.en));
+      
+      // Check if text is long (more than 50 chars)
+      const isLongEn = pair.en.length > 50;
+      const isLongFa = pair.fa.length > 50;
+      
+      const enClass = isLongEn ? 'en-word text-sm' : 'en-word';
+      const faClass = isLongFa ? 'fa-word text-sm' : 'fa-word';
+      
       const tickBtn = isKeptPage ? '' : `<button class="icon-btn" data-global-index="${globalIdx}" data-action="tick" title="keep">✔</button>`;
+      
       return `
-        <div class="word-item" data-global-index="${globalIdx}">
+        <div class="word-item" data-index="${globalIdx}">
           <div class="word-main">
-            <div class="word-pair">
-              <span class="word-number">#${number}</span>
-              <span class="en-word">${enEsc}</span>
-              <span class="fa-word">${faEsc}</span>
-            </div>
-            <div class="ai-sentence">💡 ${sentenceEsc}</div>
+            <span class="${enClass}">${enEsc}</span>
+            <span class="${faClass}">${faEsc}</span>
           </div>
-          <div class="right-group">
-            <div class="icon-group">
-              <button class="icon-btn" data-global-index="${globalIdx}" data-action="edit">✎</button>
-              <button class="icon-btn" data-global-index="${globalIdx}" data-action="voice">🔊</button>
-              ${tickBtn}
-              <button class="icon-btn delete-btn" data-global-index="${globalIdx}" data-action="delete">✕</button>
-            </div>
+          <div class="icon-group">
+            <button class="icon-btn" data-global-index="${globalIdx}" data-action="edit" title="edit">✎</button>
+            <button class="icon-btn" data-global-index="${globalIdx}" data-action="voice" title="listen">🔊</button>
+            ${tickBtn}
+            <button class="icon-btn delete-btn" data-global-index="${globalIdx}" data-action="delete" title="delete">✕</button>
           </div>
         </div>
       `;
@@ -787,6 +811,7 @@
       renderAll();
     }
 
+    // page switching
     mainPageBtn.addEventListener('click', () => {
       mainPage.classList.add('active-page');
       keptPage.classList.remove('active-page');
@@ -802,7 +827,7 @@
 
     inputEl.addEventListener('input', updateLangHint);
     inputEl.addEventListener('keydown', async (e) => {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         await addFromInput();
       }
