@@ -6,7 +6,7 @@
 
 WordFlow is a modern, web-based vocabulary trainer designed to bridge the gap between English and Persian speakers. It features a seamless, minimalist flashcard system alongside voice-activated and text-based dynamic translation workflows.
 
-✨ **[Live Application Link](https://your-live-website-url.com)**
+✨ **[Live Application Link]([https://your-live-website-url.com](https://unesjami.github.io/Word-Update/))**
 
 ---
 
