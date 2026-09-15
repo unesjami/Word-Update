@@ -1,92 +1,68 @@
-# 🌐 WordFlow — English ⇄ Persian Vocabulary Trainer
+# WordFlow
 
-[![License: MIT](https://shields.io)](https://opensource.org)
-[![PRs Welcome](https://shields.io)](http://makeapullrequest.com)
-[![Language](https://shields.io)]()
+<p align="center">
+  <strong>A bilingual English–Persian vocabulary trainer for focused daily learning.</strong>
+</p>
 
-WordFlow is a modern, web-based vocabulary trainer designed to bridge the gap between English and Persian speakers. It features a seamless, minimalist flashcard system alongside voice-activated and text-based dynamic translation workflows.
+<p align="center">
+  <a href="https://unesjami.github.io/Word-Update/"><img src="https://img.shields.io/badge/Live_Demo-Open-14b8a6?style=for-the-badge" alt="Live demo"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2563eb?style=for-the-badge" alt="MIT license"></a>
+  <img src="https://img.shields.io/badge/English_%E2%87%84_Persian-Bilingual-7c3aed?style=for-the-badge" alt="Bilingual">
+</p>
 
-✨ **[Live Application Link]([https://your-live-website-url.com](https://unesjami.github.io/Word-Update/))**
+## Overview
 
----
+WordFlow is a lightweight browser application for collecting, translating, reviewing, and memorizing English and Persian vocabulary. It runs as a static site and requires no build step.
 
-## 🚀 Features
+## Features
 
-* **Bi-directional Training:** Toggle easily between English-to-Persian and Persian-to-English vocabulary paths.
-* **Smart Flashcard Review:** Tap interface to reveal or hide definitions instantly with interactive status controls (`‹ 🔊 ✔ ›`).
-* **Active Progress Tracker:** Real-time visual tracking of active and kept vocabulary cards.
-* **Text & Voice Input:** Standard input text processing paired with voice/microphone (`🎤`) support for native pronunciations.
-* **Modern Dark Mode Support:** Clean user interface supporting comfortable low-light studying.
+- English-to-Persian and Persian-to-English learning modes
+- Interactive flashcards with navigation and review controls
+- Text and voice input through the Web Speech API
+- Pronunciation playback
+- Progress tracking and saved vocabulary in the browser
+- Responsive interface with light and dark themes
 
----
+## Technology
 
-## 🛠️ Tech Stack
+- HTML5
+- CSS3
+- JavaScript
+- Web Speech API
+- Browser storage
+- GitHub Pages
 
-* **Frontend:** HTML5, CSS3, JavaScript (ES6+), Semantic Web Components
-* **Text-to-Speech / Speech-to-Text:** Web Speech API (Microphone and Audio synthesis support)
-* **Hosting/Deployment:** [e.g., Vercel / Netlify / GitHub Pages]
+## Run locally
 
----
+```bash
+git clone https://github.com/unesjami/Word-Update.git
+cd Word-Update
+python -m http.server 8080
+```
 
-## 📦 Getting Started
+Open `http://localhost:8080`. You can also open `index.html` directly, although microphone permissions may work more reliably through a local server.
 
-Follow these simple steps to set up and run WordFlow locally on your machine.
+## Project structure
 
-### Prerequisites
+```text
+Word-Update/
+├── index.html
+├── README.md
+└── LICENSE
+```
 
-Ensure you have a modern web browser installed (Chrome, Edge, or Safari are recommended for optimal Web Speech API / microphone support).
+## Browser support
 
-### Installation & Local Setup
+A recent Chromium-based browser is recommended. Speech recognition availability and supported languages depend on the browser and operating system.
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com
-   ```
+## Contributing
 
-2. **Navigate into the project directory:**
-   ```bash
-   cd wordflow
-   ```
+Issues and focused pull requests are welcome. Please describe the problem, expected result, and browser used when reporting UI or speech-recognition issues.
 
-3. **Run the local environment:**
-   * Open `index.html` directly in your browser, or
-   * If you prefer using a local server tool like Live Server (VS Code Extension):
-     ```bash
-     # Alternatively via python for a quick local server:
-     python3 -m http.server 8080
-     ```
+## License
 
----
+Released under the [MIT License](LICENSE).
 
-## 🎨 Interface Preview
+## Author
 
-| App State Dashboard | Interactive Flashcards |
-|---|---|
-| <img src="https://placeholder.com" width="100%" alt="WordFlow UI Preview"> | <img src="https://placeholder.com" width="100%" alt="Flashcard Review UI"> |
-
-*(Tip: Replace the placeholder URLs above with real screenshots hosted in your repository)*
-
----
-
-## 🤝 Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` file for more information.
-
----
-
-## 📨 Contact
-
-**Unes Jami** - [Your GitHub Profile](https://github.com)  
-Project Link: [https://github.com/wordflow](https://github.com/wordflow)
+Created by [Unes Jami](https://github.com/unesjami).
